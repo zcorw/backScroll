@@ -8,6 +8,7 @@
     }
 }(this, function($) {
      var defaults = {
+        'container': 'ul',  //加载内容的容器
         'type': 'post', //请求方式
         'action': null, //请求链接
         'data': {},     //表单提交的参数
@@ -119,7 +120,7 @@
              var scroll = $(this).data('scroll');
              if (!scroll) {
                  var options = $.extend({},defaults,params);
-                 scroll = new ObjScroll(this, options);
+                 scroll = new ObjScroll($(this).find(options['container']), options);
                  $(this).data('scroll', scroll);
              }else{
                 if(typeof params == 'string'){

@@ -82,7 +82,8 @@
                 return '<div class="no-data">暂无节目</div>'
             }
         }
-        $('#face').find('ul').backScroll({
+        $('#face').backScroll({
+            container: 'ul',
             action: '/get_face/',
             data:{cid: 1},
             contentLoad: createTemplate,
@@ -95,7 +96,8 @@
                 }
             }
         });
-        $('#game').find('ul').backScroll({
+        $('#game').backScroll({
+            container: 'ul',
             action: '/get_game/',
             data:{cid: 2},
             contentLoad: createTemplate,
@@ -108,19 +110,19 @@
                 }
             }
         });
-        $('#face').find('ul').backScroll('firstload');
-        $('#game').find('ul').backScroll('stop');
+        $('#face').backScroll('firstload');
+        $('#game').backScroll('stop');
         $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
             var $brother = $(e.target).siblings();
             $brother.removeClass('active');
             $(e.target).addClass('active');
             $brother.each(function(){
                 var id = $(this).attr('href');
-                $(id).find('ul').backScroll('stop');
+                $(id).backScroll('stop');
             })
             var id = $(e.target).attr('href');
-            $(id).find('ul').backScroll();
-            $(id).find('ul').backScroll('firstload');
+            $(id).backScroll();
+            $(id).backScroll('firstload');
 //                wechatBack.click(id.replace(/#/,''));
         });
     </script>
