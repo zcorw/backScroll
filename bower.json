@@ -1,0 +1,22 @@
+{
+  "name": "back-scroll",
+  "description": "",
+  "main": "",
+  "authors": [
+    "zcorw"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "artTemplate": "^3.0.1"
+  }
+}

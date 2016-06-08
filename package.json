@@ -1,0 +1,15 @@
+{
+  "name": "back-scroll",
+  "version": "1.0.0",
+  "keywords": [
+    "jquery",
+    "scroll"
+  ],
+  "author": "zcorw",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "fms": "0.0.32",
+    "grunt": "*",
+    "grunt-contrib-uglify": "*"
+  }
+}
