@@ -238,12 +238,12 @@ p, h1, h2, h3, h4, h5 {
   font-size: 16px;
   margin: 10px 0; }
 
-.weui-infinite-scroll {
+.infinite-scroll {
   height: 24px;
   line-height: 24px;
   padding: 10px;
   text-align: center; }
-  .weui-infinite-scroll .infinite-preloader {
+  .infinite-scroll .infinite-preloader {
     display: inline-block;
     margin-right: 4px;
     vertical-align: -4px;
@@ -251,7 +251,7 @@ p, h1, h2, h3, h4, h5 {
     height: 20px;
     transform-origin: 50%;
     animation: preloader-spin 1s steps(12, end) infinite; }
-  .weui-infinite-scroll .infinite-preloader:after {
+  .infinite-scroll .infinite-preloader:after {
     display: block;
     width: 100%;
     height: 100%;
