@@ -80,8 +80,7 @@
                   }else{
                       s.isLoad = false;
                   }
-              },
-              dataType: 'json'
+              }
          });
 
      }
@@ -96,7 +95,7 @@
          };
      }
      //更改opts.data
-     ObjScroll.prototype.changeData = function(opts){
+     ObjScroll.prototype.changeOpts = function(opts){
          this.opts = $.extend({},this.opts,opts);
      }
      //取出当前的基础状态
@@ -131,8 +130,8 @@
                          case 'firstload':
                              scroll.firstLoad();
                              break;
-                         case 'data':
-                             scroll.changeData(arguments[1]);
+                         case 'option':
+                             scroll.changeOpts(arguments[1]);
                              break;
                          default:
                               scroll.init();
@@ -141,24 +140,4 @@
              }
         });
      }
-
-     $.fn.stopScroll = function(){
-         this.each(function() {
-             var scroll = $(this).data('scroll');
-             if (!scroll) {
-                 console.error('scroll isn\'t exist');
-             }else{
-                 scroll.stopScroll();
-             }
-        });
-     }
-     $.fn.loadScroll = function(){
-         this.each(function(){
-             var scroll = $(this).data('scroll');
-             scroll.firstLoad();
-         })
-     }
-
-
-
 }))
