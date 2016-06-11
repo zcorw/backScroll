@@ -3,7 +3,7 @@ var fms = require('fms')
 
 fms.run({
     // Server 启动在 3000 端口
-    port: 3000,
+    port: 3100,
     read: ['/demo/']
 })
 

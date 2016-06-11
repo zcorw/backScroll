@@ -1,6 +1,6 @@
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define(['jquery','wechatBack'], factory);
     } else if (typeof exports === 'object') {
         module.exports = factory(require('jquery'));
     } else {
@@ -62,6 +62,11 @@
          this.isLoad = true;
          var data = opts.data;
          data[opts.pageKey] = this.page;
+         if(opts.contentLoad === null){
+              var type = 'html';
+          }else{
+              var type = 'json';
+          }
          $.ajax({
               type: opts.type,
               url: opts.action,
@@ -80,7 +85,8 @@
                   }else{
                       s.isLoad = false;
                   }
-              }
+              },
+              dataType: type
          });
 
      }
