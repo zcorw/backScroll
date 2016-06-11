@@ -128,20 +128,18 @@
                  scroll = new ObjScroll($(this).find(options['container']), options);
                  $(this).data('scroll', scroll);
              }else{
-                if(typeof params == 'string'){
-                     switch(params){
-                         case 'stop':
-                             scroll.stopScroll();
-                             break;
-                         case 'firstload':
-                             scroll.firstLoad();
-                             break;
-                         case 'option':
-                             scroll.changeOpts(arguments[1]);
-                             break;
-                         default:
-                              scroll.init();
-                     }
+                 switch(params){
+                     case 'stop':
+                         scroll.stopScroll();
+                         break;
+                     case 'firstload':
+                         scroll.firstLoad();
+                         break;
+                     case 'option':
+                         scroll.changeOpts(arguments[1]);
+                         break;
+                     default:
+                          scroll.init();
                  }
              }
         });
