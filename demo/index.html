@@ -63,25 +63,7 @@
             })
             return result;
         }
-        function createTemplate(data){
-            var map = {
-                huya: "虎牙",
-                huajiao: "花椒",
-                longzu: "龙珠",
-                meipai: "美拍",
-                xiongmao: "熊猫TV",
-                douyu: "斗鱼",
-                zhanqi: "战旗TV"
-            }
-            if(data.pagetotal != 0){
-                for(var i in data.list){
-                    data.list[i].webname = array_where(map,data.list[i].webname);
-                }
-                return template('list_template', data);
-            }else{
-                return '<div class="no-data">暂无节目</div>'
-            }
-        }
+
         $('#face').backScroll({
             container: 'ul',
             action: '/get_face/',
@@ -89,7 +71,7 @@
             contentLoad: createTemplate,
             overLoad: function(data){
                 if(data.pagetotal <= data.page){
-                    $('#face').find('.weui-infinite-scroll').html('节目已经全部加载完');
+                    $('#face').find('.infinite-scroll').html('节目已经全部加载完');
                     return true;
                 }else{
                     return false;
@@ -103,7 +85,7 @@
             contentLoad: createTemplate,
             overLoad: function(data){
                 if(data.pagetotal <= data.page){
-                    $('#game').find('.weui-infinite-scroll').html('节目已经全部加载完');
+                    $('#game').find('.infinite-scroll').html('节目已经全部加载完');
                     return true;
                 }else{
                     return false;
@@ -125,6 +107,26 @@
             $(id).backScroll('firstload');
 //                wechatBack.click(id.replace(/#/,''));
         });
+        function createTemplate(data){
+            var map = {
+                huya: "虎牙",
+                huajiao: "花椒",
+                longzu: "龙珠",
+                meipai: "美拍",
+                xiongmao: "熊猫TV",
+                douyu: "斗鱼",
+                zhanqi: "战旗TV"
+            }
+            if(data.pagetotal != 0){
+                for(var i in data.list){
+                    data.list[i].webname = array_where(map,data.list[i].webname);
+                }
+                var html = template('list_template', data);
+                return html;
+            }else{
+                return '<div class="no-data">暂无节目</div>'
+            }
+        }
     </script>
 </body>
 </html>
